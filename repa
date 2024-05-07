@@ -1,4 +1,4 @@
-from pygame import*
+from pygame import *
 class GameSprite(sprite.Sprite):
    def __init__(self, player_image, player_x, player_y, player_speed, wight, height):
        super().__init__()
@@ -51,7 +51,7 @@ speed_x = 3
 speed_y = 3
 
 while game:
-    for e in event.get: 
+    for e in event.get(): 
         if e.type == QUIT:
             game = False
 
@@ -74,7 +74,7 @@ while game:
             window.blit(lose1, (200, 200))
             game_over = True
 
-        if ball.rect.x < win_width: 
+        if ball.rect.x >  win_width: 
             finish = True
             window.blit(lose2, (200, 200))
             game_over = True
@@ -82,6 +82,6 @@ while game:
         racket1.reset() 
         racket2.reset()
         ball.reset()
-    
+
     display.update()
     clock.tick(FPS)
